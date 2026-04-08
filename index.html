@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shynia Beauty – Luxury Cosmetics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo">✦ Shynia</a>
+      <nav class="nav" id="nav">
+        <a href="#home"    class="nav-link">Home</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#about"   class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-tag">New Collection 2026</span>
+      <h1 class="hero-title">Reveal Your<br /><em>Natural Beauty</em></h1>
+      <p class="hero-subtitle">Premium skincare and cosmetics crafted with the finest botanicals for a radiant, confident you.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary">Shop Now</a>
+        <a href="#about"    class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-blob">
+        <div class="hero-img-placeholder">
+          <span>🌸</span>
+          <p>Pure Glow Serum</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BANNER STRIP ========== -->
+  <div class="banner-strip">
+    <span>✦ Free shipping on orders over $50</span>
+    <span>✦ Cruelty-free &amp; vegan</span>
+    <span>✦ 30-day returns</span>
+    <span>✦ Dermatologist tested</span>
+  </div>
+
+  <!-- ========== CATEGORIES ========== -->
+  <section class="categories section">
+    <div class="container">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="categories-grid">
+        <a href="#products" class="category-card" data-filter="skincare">
+          <span class="cat-icon">🧴</span>
+          <h3>Skincare</h3>
+          <p>Serums, moisturisers &amp; more</p>
+        </a>
+        <a href="#products" class="category-card" data-filter="makeup">
+          <span class="cat-icon">💄</span>
+          <h3>Makeup</h3>
+          <p>Lips, eyes &amp; foundation</p>
+        </a>
+        <a href="#products" class="category-card" data-filter="fragrance">
+          <span class="cat-icon">🌺</span>
+          <h3>Fragrance</h3>
+          <p>Eau de parfum &amp; mists</p>
+        </a>
+        <a href="#products" class="category-card" data-filter="haircare">
+          <span class="cat-icon">💆</span>
+          <h3>Hair Care</h3>
+          <p>Masks, oils &amp; serums</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section class="products section" id="products">
+    <div class="container">
+      <h2 class="section-title">Bestsellers</h2>
+      <p class="section-subtitle">Our community's most-loved products</p>
+
+      <!-- Filter buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="skincare">Skincare</button>
+        <button class="filter-btn" data-filter="makeup">Makeup</button>
+        <button class="filter-btn" data-filter="fragrance">Fragrance</button>
+        <button class="filter-btn" data-filter="haircare">Hair Care</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <!-- Product cards are injected by JS -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY SHYNIA ========== -->
+  <section class="features section">
+    <div class="container">
+      <h2 class="section-title">Why Shynia?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🌿</span>
+          <h3>100% Natural</h3>
+          <p>Every formula is made from plant-based, ethically sourced ingredients.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🐰</span>
+          <h3>Cruelty-Free</h3>
+          <p>We never test on animals. Certified by Leaping Bunny.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">♻️</span>
+          <h3>Sustainable</h3>
+          <p>Eco-conscious packaging made from recycled and biodegradable materials.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔬</span>
+          <h3>Science-Backed</h3>
+          <p>Dermatologist-tested formulas that deliver real, visible results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials section">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="stars">★★★★★</p>
+          <p class="testimonial-text">"The Pure Glow Serum transformed my skin in just two weeks. I've never felt more confident without makeup!"</p>
+          <p class="testimonial-author">— Priya S., Mumbai</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="stars">★★★★★</p>
+          <p class="testimonial-text">"Absolutely obsessed with the Rose Petal Lipstick. The colour payoff is stunning and it lasts all day."</p>
+          <p class="testimonial-author">— Emma L., London</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="stars">★★★★★</p>
+          <p class="testimonial-text">"Finally a fragrance that doesn't irritate my sensitive skin. Shynia's Blossom Mist smells divine!"</p>
+          <p class="testimonial-author">— Aisha K., Dubai</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section" id="about">
+    <div class="container about-inner">
+      <div class="about-image">
+        <div class="about-img-placeholder">
+          <span>🌹</span>
+          <p>Est. 2020</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Our Story</span>
+        <h2>Beauty Rooted in<br /><em>Nature &amp; Science</em></h2>
+        <p>Shynia was born from a simple belief: everyone deserves to feel radiant in their own skin. Founded in 2020 by beauty enthusiast and biochemist Shynia Kapoor, our brand blends ancient botanical wisdom with cutting-edge dermatological research.</p>
+        <p>Every product is hand-crafted in small batches, free from harmful chemicals, and wrapped in sustainable packaging — because we care about your skin and our planet.</p>
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWSLETTER ========== -->
+  <section class="newsletter section">
+    <div class="container newsletter-inner">
+      <h2>Join the Shynia Circle</h2>
+      <p>Be the first to hear about new launches, exclusive offers, and beauty tips.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Enter your email address" required class="newsletter-input" />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="newsletter-note" id="newsletterMsg"></p>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact section" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-info">
+        <span class="section-tag">Contact Us</span>
+        <h2>We'd Love to<br /><em>Hear from You</em></h2>
+        <div class="contact-details">
+          <p>📧 hello@shynia.com</p>
+          <p>📞 +91 98765 43210</p>
+          <p>📍 12 Rose Lane, Bengaluru, India</p>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">📸 Instagram</a>
+          <a href="#" class="social-link" aria-label="Facebook">👍 Facebook</a>
+          <a href="#" class="social-link" aria-label="Pinterest">📌 Pinterest</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input type="text"  name="name"    placeholder="Your Name"    required class="form-input" />
+        <input type="email" name="email"   placeholder="Your Email"   required class="form-input" />
+        <input type="text"  name="subject" placeholder="Subject"               class="form-input" />
+        <textarea name="message" placeholder="Your Message" rows="5" required class="form-input form-textarea"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-msg" id="contactMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo">✦ Shynia</a>
+        <p>Luxury cosmetics rooted in nature. Crafted for confidence.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Policies</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Shipping &amp; Returns</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Connected</h4>
+        <p>Follow us for beauty tips and new arrivals.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">👍</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shynia Beauty. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== CART SIDEBAR ========== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart" id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your bag is empty 🛍️</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        Total: <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn btn-primary" style="width:100%">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

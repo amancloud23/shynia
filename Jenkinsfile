@@ -54,7 +54,7 @@ pipeline {
                 docker run -d \
                 --name $BACKEND_CONTAINER \
                 --network $NETWORK_NAME \
-                -p 6000:6000 \
+                -p 5000:5000 \
                 --env-file /home/ubuntu/shynia-env/.env \
                 --restart always \
                 $BACKEND_IMAGE

@@ -4,6 +4,7 @@ pipeline {
     environment {
         APP_NAME = "shynia-backend"
         CONTAINER_NAME = "shynia-backend-container"
+        NETWORK_NAME = "shynia-network"
     }
 
     stages {
@@ -32,11 +33,12 @@ pipeline {
             }
         }
 
-        stage('Run New Container') {
+        stage('Run Backend Container') {
             steps {
                 sh '''
                 docker run -d \
                 --name $CONTAINER_NAME \
+                --network $NETWORK_NAME \
                 -p 6000:6000 \
                 --env-file /home/ubuntu/shynia-env/.env \
                 --restart always \

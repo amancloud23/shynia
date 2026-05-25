@@ -2,8 +2,12 @@ pipeline {
     agent any
 
     environment {
-        APP_NAME = "shynia-backend"
-        CONTAINER_NAME = "shynia-backend-container"
+        BACKEND_IMAGE = "shynia-backend"
+        FRONTEND_IMAGE = "shynia-frontend"
+
+        BACKEND_CONTAINER = "shynia-backend-container"
+        FRONTEND_CONTAINER = "shynia-frontend-container"
+
         NETWORK_NAME = "shynia-network"
     }
 
@@ -16,19 +20,30 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build Backend Image') {
             steps {
                 dir('backend') {
-                    sh 'docker build -t $APP_NAME .'
+                    sh 'docker build -t $BACKEND_IMAGE .'
                 }
             }
         }
 
-        stage('Stop Old Container') {
+        stage('Build Frontend Image') {
+            steps {
+                dir('frontend') {
+                    sh 'docker build -t $FRONTEND_IMAGE .'
+                }
+            }
+        }
+
+        stage('Stop Old Containers') {
             steps {
                 sh '''
-                docker stop $CONTAINER_NAME || true
-                docker rm $CONTAINER_NAME || true
+                docker stop $BACKEND_CONTAINER || true
+                docker rm $BACKEND_CONTAINER || true
+
+                docker stop $FRONTEND_CONTAINER || true
+                docker rm $FRONTEND_CONTAINER || true
                 '''
             }
         }
@@ -37,12 +52,25 @@ pipeline {
             steps {
                 sh '''
                 docker run -d \
-                --name $CONTAINER_NAME \
+                --name $BACKEND_CONTAINER \
                 --network $NETWORK_NAME \
                 -p 6000:6000 \
                 --env-file /home/ubuntu/shynia-env/.env \
                 --restart always \
-                $APP_NAME
+                $BACKEND_IMAGE
+                '''
+            }
+        }
+
+        stage('Run Frontend Container') {
+            steps {
+                sh '''
+                docker run -d \
+                --name $FRONTEND_CONTAINER \
+                --network $NETWORK_NAME \
+                -p 5173:5173 \
+                --restart always \
+                $FRONTEND_IMAGE
                 '''
             }
         }
@@ -51,17 +79,6 @@ pipeline {
             steps {
                 sh 'docker ps'
             }
-        }
-    }
-
-    post {
-
-        success {
-            echo 'Deployment Successful!'
-        }
-
-        failure {
-            echo 'Pipeline Failed!'
         }
     }
 }

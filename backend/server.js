@@ -5,14 +5,11 @@ const cors    = require('cors');
 const { sequelize } = require('./models');
 
 const app = express();
-
 app.use(cors({
-  origin: [
-    'http://52.15.195.89',
-    'http://52.15.195.89:5173'
-  ],
+  origin: '*',
   credentials: true
 }));
+
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 

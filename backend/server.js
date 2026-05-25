@@ -8,8 +8,8 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://YOUR_PUBLIC_IP',
-    'http://YOUR_PUBLIC_IP:5173'
+    'http://52.15.195.89',
+    'http://52.15.195.89:5173'
   ],
   credentials: true
 }));
@@ -22,7 +22,7 @@ app.use('/api/products', require('./routes/products'));
 app.use('/api/orders',   require('./routes/orders'));
 
 app.get('/api/health', (req, res) =>
-  res.json({ status: 'SHYNIA API running ✓' })
+  res.json//({ status: 'SHYNIA API running ✓' })
 );
 
 // Global error handler
